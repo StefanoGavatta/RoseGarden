@@ -1,15 +1,26 @@
-import { Component, HostListener, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { HeroComponent } from './hero/hero.component';
+import { ContentSectionComponent } from './content-section/content-section.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    HeroComponent,
+    ContentSectionComponent,
+    FooterComponent,
+    LoadingSpinnerComponent
+  ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css'
 })
 export class LandingPage implements AfterViewInit {
-  isScrolled = false;
   isLoaded = false;
 
   constructor(private elementRef: ElementRef) {}
@@ -23,63 +34,8 @@ export class LandingPage implements AfterViewInit {
         container.classList.add('loaded');
       }
     }, 300);
-
-    // Aggiungere il listener per il prefers-reduced-motion
-    this.checkReducedMotionPreference();
   }
 
-  // Controlla se l'utente preferisce ridurre le animazioni
-  checkReducedMotionPreference() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      // Trova tutti gli elementi con animazioni e rimuovi l'animazione
-      const animatedElements = this.elementRef.nativeElement.querySelectorAll('.circle, .feature-card, .content-container, .rose-decoration');
-      animatedElements.forEach((el: HTMLElement) => {
-        el.style.animation = 'none';
-        el.style.transform = 'none';
-        el.style.opacity = '1';
-      });
-    }
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
-    // Seleziona l'header e aggiungi/rimuovi la classe
-    const header = document.querySelector('.header') as HTMLElement;
-    if (header) {
-      if (this.isScrolled) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-
-    // Effetto parallasse sui cerchi decorativi
-    this.handleParallaxEffect();
-  }
-  
-  // Metodo per creare effetto parallasse sui cerchi
-  handleParallaxEffect(): void {
-    // Verifica se l'utente preferisce ridurre i movimenti
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      return; // Non applicare parallasse se l'utente preferisce ridurre i movimenti
-    }
-    
-    const circles = document.querySelectorAll('.circle') as NodeListOf<HTMLElement>;
-    const scrollPosition = window.scrollY;
-    
-    circles.forEach((circle, index) => {
-      // Diversi valori per ciascun cerchio per un effetto più naturale
-      const speed = 0.05 * (index % 3 + 1); // Velocità diverse: 0.05, 0.10, 0.15
-      const yPos = scrollPosition * speed;
-      
-      // Trasformiamo il cerchio con un valore di parallasse
-      circle.style.transform = `translateY(${yPos}px) translateZ(0)`;
-    });
-  }
-  
   // Metodo per gestire il clic sul pulsante Explore
   onExploreClick(): void {
     console.log('Explore button clicked');
@@ -106,17 +62,10 @@ export class LandingPage implements AfterViewInit {
     
     const sectionElement = document.querySelector(sectionId) as HTMLElement;
     if (sectionElement) {
-      // Verifica preferenza utente per ridurre movimenti
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReducedMotion) {
-        // Scroll istantaneo se l'utente preferisce ridurre i movimenti
-        window.scrollTo({
-          top: sectionElement.offsetTop
-        });
-      } else {
-        // Smooth scroll altrimenti
-        sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      // Scroll istantaneo se l'utente preferisce ridurre i movimenti
+      window.scrollTo({
+        top: sectionElement.offsetTop
+      });
     }
   }
 }
