@@ -2,7 +2,7 @@ import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
-import { CardsPageComponent } from '../cards-page.component';
+import { CardsPageComponent } from '../cards-page/cards-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
