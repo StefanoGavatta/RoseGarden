@@ -1,7 +1,5 @@
 <app-loading-spinner [isLoaded]="isLoaded"></app-loading-spinner>
-<app-header (home)="scrollToTop()" (info)="scrollToSection('#content-section')"></app-header>
 <div id="top" class="landing-container">
   <app-hero (explore)="onExploreClick()"></app-hero>
 </div>
 <app-cards-page></app-cards-page>
-<app-footer (backToTop)="scrollToTop()"></app-footer>
