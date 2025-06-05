@@ -7,6 +7,8 @@ export const routes: Routes = [
   { path: '', component: LandingPage },
   { path: 'cards', component: CardsPageComponent },
   { path: 'info', component: ShowcasePageComponent },
-  { path: 'showcase', redirectTo: 'info' }, // Redirect alternativo
+  { path: 'showcase', redirectTo: 'info' },
+  { path: 'lavora-con-noi', redirectTo: '' }, // Per ora reindirizza alla home, da sostituire con il componente appropriato quando sarà creato
+  { path: 'forms', redirectTo: '' }, // Per ora reindirizza alla home, da sostituire con il componente appropriato quando sarà creato
   { path: '**', redirectTo: '' }
 ];

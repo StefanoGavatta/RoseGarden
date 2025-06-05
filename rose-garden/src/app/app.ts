@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './landing-page/header/header.component';
 import { FooterComponent } from './landing-page/footer/footer.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,18 @@ import { FooterComponent } from './landing-page/footer/footer.component';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   protected title = 'rose-garden';
+  
+  constructor(private router: Router) {}
+  
+  ngOnInit() {
+    // Sottoscrizione agli eventi di navigazione completata
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      // Effettua lo scroll verso l'alto quando cambia componente
+      window.scrollTo(0, 0);
+    });
+  }
 }
