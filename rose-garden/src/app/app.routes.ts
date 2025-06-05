@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LandingPage } from './landing-page/landing-page';
 import { CardsPageComponent } from './cards-page/cards-page.component';
 import { ShowcasePageComponent } from './showcase-page/showcase-page.component';
+import { FormsPageComponent } from './forms-page/forms-page.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPage },
@@ -9,6 +10,6 @@ export const routes: Routes = [
   { path: 'info', component: ShowcasePageComponent },
   { path: 'showcase', redirectTo: 'info' },
   { path: 'lavora-con-noi', redirectTo: '' }, // Per ora reindirizza alla home, da sostituire con il componente appropriato quando sarà creato
-  { path: 'forms', redirectTo: '' }, // Per ora reindirizza alla home, da sostituire con il componente appropriato quando sarà creato
+  { path: 'forms', component: FormsPageComponent },
   { path: '**', redirectTo: '' }
 ];

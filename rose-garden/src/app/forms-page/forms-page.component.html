@@ -1,0 +1,78 @@
+<div class="forms-container">
+  <!-- Background decorative elements -->
+  <div class="decorative-shapes">
+    <div class="floating-rose rose-1"></div>
+    <div class="floating-rose rose-2"></div>
+    <div class="floating-rose rose-3"></div>
+    <div class="decorative-circle circle-1"></div>
+    <div class="decorative-circle circle-2"></div>
+    <div class="decorative-circle circle-3"></div>
+    <div class="decorative-petal petal-1"></div>
+    <div class="decorative-petal petal-2"></div>
+  </div>
+
+  <!-- Hero section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="main-title">Moduli & Forms</h1>
+      <p class="hero-subtitle">Partecipa, Collabora, Cresci</p>
+      <div class="hero-description">
+        <p>Compila i nostri moduli per unirti alla community, proporre progetti, richiedere supporto o partecipare ai nostri eventi. Ogni form è un'opportunità per crescere insieme!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forms grid section -->
+  <section class="forms-section">
+    <div class="section-content">
+      <h2 class="section-title">Scegli il Modulo Adatto a Te</h2>
+      <div class="forms-grid">
+        <div 
+          class="form-card"
+          *ngFor="let card of formCards"
+          (click)="openForm(card.formUrl)"
+          tabindex="0"
+          (keydown.enter)="openForm(card.formUrl)"
+          (keydown.space)="openForm(card.formUrl)"
+        >
+          <div class="card-header">
+            <div class="card-icon" [class]="'category-' + card.category">
+              <span class="material-icons">{{ card.icon }}</span>
+            </div>
+            <span class="card-category">{{ card.category }}</span>
+          </div>
+          
+          <div class="card-content">
+            <h3 class="card-title">{{ card.title }}</h3>
+            <p class="card-description">{{ card.description }}</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="form-action">
+              <span class="action-text">Compila Form</span>
+              <span class="material-icons">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info section -->
+  <section class="info-section">
+    <div class="info-content">
+      <div class="info-card">
+        <h3>🌟 Perché Partecipare?</h3>
+        <p>Ogni modulo che compili ci aiuta a crescere come community e ti offre nuove opportunità di sviluppo professionale e personale.</p>
+      </div>
+      <div class="info-card">
+        <h3>🔒 Privacy & Sicurezza</h3>
+        <p>Tutti i dati sono trattati secondo il GDPR e utilizzati esclusivamente per gli scopi indicati in ciascun modulo.</p>
+      </div>
+      <div class="info-card">
+        <h3>⚡ Risposta Rapida</h3>
+        <p>Il nostro team risponde a tutte le richieste entro 24-48 ore lavorative per garantire un supporto tempestivo.</p>
+      </div>
+    </div>
+  </section>
+</div>
