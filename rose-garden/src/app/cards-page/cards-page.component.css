@@ -28,6 +28,15 @@
   align-items: center;
   transition: box-shadow 0.2s;
 }
+.clickable-card {
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+}
+.clickable-card:hover, .clickable-card:focus {
+  transform: translateY(-7px) scale(1.04) rotate(-1.5deg);
+  box-shadow: 0 8px 32px rgba(108,99,255,0.18);
+  z-index: 1;
+}
 .card:hover {
   box-shadow: 0 4px 24px rgba(0,0,0,0.13);
 }
