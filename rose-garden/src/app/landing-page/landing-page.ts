@@ -2,7 +2,7 @@ import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
-import { ContentSectionComponent } from './content-section/content-section.component';
+import { CardsPageComponent } from '../cards-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
@@ -13,9 +13,9 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     CommonModule,
     HeaderComponent,
     HeroComponent,
-    ContentSectionComponent,
     FooterComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    CardsPageComponent
   ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css'
