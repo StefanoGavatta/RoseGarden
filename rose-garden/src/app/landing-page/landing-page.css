@@ -1,0 +1,337 @@
+/* Import Google Fonts - Wix Madefor Text */
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700&display=swap');
+
+/* CSS Reset per compatibilità cross-browser */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables - Color Palette */
+:root {
+  --thistle: #cdb4dbff;
+  --fairy-tale: #ffc8ddff;
+  --carnation-pink: #ffafccff;
+  --uranian-blue: #bde0feff;
+  --light-sky-blue: #a2d2ffff;
+  --white-transparent: rgba(255, 255, 255, 0.1);
+  --circle-shadow: rgba(205, 180, 219, 0.3);
+}
+
+.landing-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #a2d2ff;
+  background-image: linear-gradient(135deg, #a2d2ff 0%, #bde0fe 30%, #cdb4db 70%, #ffc8dd 100%);
+  font-family: 'Wix Madefor Text', sans-serif;
+  overflow: hidden;
+  z-index: 0;
+}
+
+@keyframes page-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Decorative Background Circles */
+.decorative-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.circle-1 {
+  top: 10%;
+  left: 15%;
+  width: 120px;
+  height: 120px;
+  background-color: #cdb4db;
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.circle-2 {
+  top: 20%;
+  right: 10%;
+  width: 80px;
+  height: 80px;
+  background-color: #ffc8dd;
+  animation: float-medium 6s ease-in-out infinite 1s;
+}
+
+.circle-3 {
+  bottom: 25%;
+  left: 8%;
+  width: 150px;
+  height: 150px;
+  background-color: #ffafcc;
+  animation: float-slow 10s ease-in-out infinite 2s;
+}
+
+.circle-4 {
+  top: 50%;
+  left: 5%;
+  width: 60px;
+  height: 60px;
+  background-color: #bde0fe;
+  animation: float-fast 4s ease-in-out infinite 0.5s;
+}
+
+.circle-5 {
+  bottom: 10%;
+  right: 25%;
+  width: 100px;
+  height: 100px;
+  background-color: #a2d2ff;
+  animation: float-medium 7s ease-in-out infinite 3s;
+}
+
+.circle-6 {
+  top: 35%;
+  right: 30%;
+  width: 70px;
+  height: 70px;
+  background-color: #cdb4db;
+  animation: float-fast 5s ease-in-out infinite 1.5s;
+}
+
+.circle-7 {
+  top: 70%;
+  left: 40%;
+  width: 90px;
+  height: 90px;
+  background-color: #ffc8dd;
+  animation: float-medium 6.5s ease-in-out infinite 2.5s;
+}
+
+.circle-8 {
+  top: 15%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #ffafcc;
+  animation: float-fast 3.5s ease-in-out infinite 0.8s;
+}
+
+/* Main Content */
+.content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.main-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 400;
+  color: white;
+  margin: 0 0 3rem 0;
+  line-height: 1.6;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.highlight {
+  color: #ffc8dd;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.explore-btn {
+  background-color: var(--carnation-pink);
+  border: 2px solid white;
+  color: white;
+  font-family: 'Wix Madefor Text', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.explore-btn:hover {
+  background-color: var(--fairy-tale);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border-color: white;
+}
+
+.explore-btn:active {
+  transform: translateY(0);
+}
+
+/* Rose Decoration */
+.rose-decoration {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 150px;
+  height: 150px;
+  z-index: 2;
+  opacity: 0.8;
+  animation: rose-pulse 4s ease-in-out infinite;
+}
+
+.rose-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.4));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    padding: 1rem;
+  }
+  
+  .circle {
+    opacity: 0.4;
+  }
+  
+  .circle-1, .circle-3 {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .circle-2, .circle-5 {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .circle-4, .circle-6, .circle-8 {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .circle-7 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .rose-decoration {
+    width: 100px;
+    height: 100px;
+    bottom: 5%;
+    right: 5%;
+  }
+  
+  .explore-btn {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .decorative-shapes {
+    opacity: 0.3;
+  }
+  
+  .subtitle {
+    margin-bottom: 2rem;
+  }
+  
+  .rose-decoration {
+    display: none;
+  }
+  
+  .circle-1, .circle-3 {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .circle-7 {
+    display: none;
+  }
+  
+  .circle-8 {
+    display: none;
+  }
+}
+
+/* Custom animations for floating circles and effects */
+@keyframes float-slow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-medium {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-fast {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rose-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
