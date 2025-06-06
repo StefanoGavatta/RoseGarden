@@ -34,7 +34,7 @@
   font-weight: 700;
   color: white;
   text-decoration: none;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
   transition: all 0.3s ease;
   letter-spacing: 1px;
   position: relative;
@@ -73,6 +73,7 @@
   position: relative;
   transition: all 0.3s ease;
   padding: 5px 2px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
 .nav-link::after {
@@ -92,6 +93,12 @@
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.nav-link:focus {
+  outline: 2.5px solid #ffc8dd;
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
 }
 
 .social-icons {

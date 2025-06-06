@@ -42,7 +42,7 @@
   font-weight: 700;
   color: white;
   margin: 0 0 1.5rem 0;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 4px 15px rgba(0,0,0,0.35), 0 0 8px #fff;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -52,7 +52,7 @@
   color: white;
   margin: 0 0 3rem 0;
   line-height: 1.6;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 15px rgba(0,0,0,0.35), 0 0 8px #fff;
 }
 .highlight {
   color: #ffc8dd;

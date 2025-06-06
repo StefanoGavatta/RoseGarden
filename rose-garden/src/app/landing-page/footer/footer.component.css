@@ -54,6 +54,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 .footer-link::after {
   content: '';
@@ -70,6 +71,11 @@
 }
 .footer-link:hover::after {
   width: 100%;
+}
+.footer-link:focus {
+  outline: 2.5px solid #ffc8dd;
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
 }
 .back-to-top {
   display: inline-flex;

@@ -1,4 +1,3 @@
-
 /* Import Google Fonts - Wix Madefor Text */
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700&display=swap');
 
@@ -170,6 +169,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 0 2px #fff; /* Migliorato contrasto */
 }
 
 .hero-subtitle {
@@ -205,6 +205,7 @@
   font-weight: 600;
   margin-bottom: 3rem;
   color: var(--text-dark);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.10); /* Migliorato contrasto */
 }
 
 /* Forms Grid - 3 colonne */
@@ -255,7 +256,8 @@
 }
 
 .form-card:focus {
-  border: 2px solid var(--focus-ring-color);
+  border: 2.5px solid #ffafcc; /* Più visibile */
+  box-shadow: 0 0 0 3px #ffc8dd55;
 }
 
 /* Card Header */
@@ -277,6 +279,7 @@
   color: white;
   font-size: 1.5rem;
   box-shadow: 0 4px 16px rgba(255, 175, 204, 0.3);
+  border: 2px solid #fff; /* Bordo per contrasto */
 }
 
 /* Category-specific icon colors */
@@ -291,7 +294,7 @@
 .category-testing { background: linear-gradient(135deg, #ff8a80, #ea80fc); }
 
 .card-category {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   font-size: 0.8rem;
@@ -299,6 +302,7 @@
   color: var(--text-dark);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  border: 1px solid var(--carnation-pink); /* Bordo per contrasto */
 }
 
 /* Card Content */
