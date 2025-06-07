@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './landing-page/header/header.component';
-import { FooterComponent } from './landing-page/footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 import { filter } from 'rxjs/operators';
 
 @Component({

@@ -95,6 +95,14 @@
   width: 100%;
 }
 
+.nav-link.active {
+  color: var(--fairy-tale);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
 .nav-link:focus {
   outline: 2.5px solid #ffc8dd;
   background: rgba(255,255,255,0.15);

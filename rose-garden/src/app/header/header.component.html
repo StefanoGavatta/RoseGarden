@@ -1,10 +1,11 @@
 <header class="header">
   <div class="header-content">
-    <a href="#top" class="logo">Rose Garden</a>
+    <a routerLink="/" class="logo">Rose Garden</a>
     <nav class="nav-links">
-      <a href="#top" class="nav-link" (click)="onHomeClick($event)">Home</a>
-      <a href="#content-section" class="nav-link" (click)="onInfoClick($event)">Info</a>
-      <a routerLink="/cards" class="nav-link">Scopri</a>
+      <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/info" class="nav-link" routerLinkActive="active">Info</a>
+      <a routerLink="/forms" class="nav-link" routerLinkActive="active">Contatti</a>
+      <a routerLink="/aggiornamenti" class="nav-link" routerLinkActive="active">Aggiornamenti</a>
     </nav>
     <div class="social-icons">
       <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" class="social-icon discord-icon" aria-label="Seguici su Discord">

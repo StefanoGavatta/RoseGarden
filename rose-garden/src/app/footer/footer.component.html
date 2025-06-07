@@ -6,10 +6,11 @@
     </div>
     <nav class="footer-nav" aria-label="Collegamenti piè di pagina">
       <div class="footer-links">
-        <a href="#" class="footer-link">Privacy</a>
-        <a href="#" class="footer-link">Termini</a>
-        <a href="#" class="footer-link">Contatti</a>
-        <a href="#top" class="footer-link back-to-top" (click)="onBackToTop(); $event.preventDefault()">
+        <a routerLink="/" class="footer-link">Home</a>
+        <a routerLink="/info" class="footer-link">Info</a>
+        <a routerLink="/forms" class="footer-link">Contatti</a>
+        <a routerLink="/aggiornamenti" class="footer-link">Aggiornamenti</a>
+        <a href="#" class="footer-link back-to-top" (click)="scrollToTop(); $event.preventDefault()">
           <span>Torna su</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="12" y1="19" x2="12" y2="5"></line>

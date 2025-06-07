@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
@@ -7,8 +8,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-  @Output() explore = new EventEmitter<void>();
+  constructor(private router: Router) {}
+  
   onExploreClick() {
-    this.explore.emit();
+    this.router.navigate(['/cards']);
   }
 }

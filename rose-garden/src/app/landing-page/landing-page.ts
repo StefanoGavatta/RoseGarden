@@ -34,16 +34,6 @@ export class LandingPage implements AfterViewInit {
     }, 300);
   }
 
-  // Metodo per gestire il clic sul pulsante Explore
-  onExploreClick(): void {
-    console.log('Explore button clicked');
-    // Smooth scroll alla sezione successiva
-    const contentSection = document.querySelector('#content-section') as HTMLElement;
-    if (contentSection) {
-      contentSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
   // Metodo per scrollare verso l'alto quando viene cliccato il pulsante "Torna su"
   scrollToTop(): void {
     window.scrollTo({
